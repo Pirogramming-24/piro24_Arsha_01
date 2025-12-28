@@ -56,3 +56,8 @@
     color: #fff;
     vertical-align: middle;
 }
+
+.hj_call-to-action .hj_cta-btn:hover{
+    background: #47b2e4;
+    color: #fff;
+}
