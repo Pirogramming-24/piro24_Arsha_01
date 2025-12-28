@@ -1,0 +1,218 @@
+/*화면비율*/
+.sw-container {
+    width: 100%;           
+    max-width: 1600px;     
+    margin: 0 auto;       
+    padding: 0 15px;      
+}
+
+/*헤더 섹션 */
+.sw-header{
+    background-color: #37517e;
+    padding: 15px 0;
+}
+.sw-header .sw-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sw-logo a {
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sw-header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.sw-nav ul{
+    display: flex;
+    gap: 30px;
+}
+.sw-nav-list a {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    transition:0.3s
+}
+
+.sw-nav-list a:hover{
+    color: #47b2e4;
+}
+
+.sw-nav-list a i {
+    font-size: 12px;      
+    margin-left: 5px;     
+    font-weight: 800;    
+}
+
+.sw-header .sw-btn-getstarted {
+    background-color: #47b2e4;
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.sw-header .sw-btn-getstarted:hover {
+    background-color: #209dd8;
+}
+
+/* 히어로섹션 */
+.sw-hero{
+    background-color: #37517e;
+    padding: 100px 0;
+    color: #fff;
+}
+
+.sw-hero .sw-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.sw-hero-text{
+    flex: 1;
+}
+
+.sw-hero .sw-container h2{
+    font-size: 60px; 
+    font-weight: 700; 
+    line-height: 1.2; 
+    margin-bottom: 20px; 
+}
+
+.sw-hero-text p {
+    font-size: 24px;
+    margin-bottom: 30px;  
+    color: #ffffffcc;  
+}
+
+.sw-btn-group{
+    display:flex;
+    gap: 20px;
+    align-items: center;
+}
+.sw-btn-group .sw-btn-primary{
+    background-color: #47b2e4;
+    color:#fff;
+    padding: 18px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+    font-size : 18px
+}
+.sw-btn-primary:hover{
+    background-color: #209dd8;;
+}
+
+.sw-btn-watch {
+    display: flex;         
+    align-items: center;          
+    color: #fff;           
+    font-weight: 600;      
+    transition: 0.3s;
+    font-size:20px;
+}
+
+.sw-btn-watch i {
+    font-size: 35px;        
+    color: #fff;           
+    line-height: 0;         
+    margin-right: 8px;     
+    transition: 0.3s;
+}
+
+.sw-btn-watch:hover {
+    color: #47b2e4;         
+}
+
+.sw-btn-watch:hover i {
+    color: #47b2e4;       
+}
+
+.sw-hero-img {
+    flex: 1;     
+    text-align: right; 
+}
+
+.sw-hero-img img {
+    max-width: 100%; 
+    height: auto;    
+    animation: float 3s ease-in-out infinite; 
+}
+
+/* 클라이언트 애니메이션구현 */
+.sw-clients {
+    background-color: #f3f5fa;
+    padding: 30px 0;
+}
+
+.sw-clients-slider {
+    overflow: hidden;    
+    width: 100%;
+}
+
+.sw-clients-track {
+    display: flex;
+    align-items: center;
+    
+    width: calc(100% / 6 * 16); 
+    
+    animation: step-scroll 16s ease-in-out infinite;
+}
+
+.sw-client-logo {
+    width: calc(100% / 16); 
+    padding: 0 20px;    
+    display: flex;
+    justify-content: center; 
+}
+
+.sw-client-logo img {
+    width: 60%;            
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.sw-client-logo img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/*  애니메이션 정의 */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes step-scroll {
+    0%, 10% { transform: translateX(0); }
+    12.5%, 22.5% { transform: translateX(-6.25%); }
+    25%, 35% { transform: translateX(-12.5%); }
+    37.5%, 47.5% { transform: translateX(-18.75%); }
+    50%, 60% { transform: translateX(-25%); }
+    62.5%, 72.5% { transform: translateX(-31.25%); }
+    75%, 85% { transform: translateX(-37.5%); }
+    87.5%, 97.5% { transform: translateX(-43.75%); }
+    100% { transform: translateX(-50%); }
+}
