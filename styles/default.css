@@ -1,0 +1,118 @@
+/*  커밋할 때 주석처리하기 
+    공통 색상
+*/
+
+
+a, a:link, a:visited {
+    text-decoration: none;
+} 
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #375171;
+}
+
+
+/* section, */
+.hj_section{
+    color: #444444;
+    background-color: #f5f6f8;
+    padding: 60px 0;
+    scroll-margin-top: 88px;
+    overflow: clip;
+}
+
+.hj_container{
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.hj_section-title{
+    text-align: center;
+    padding-bottom: 60px;
+    position: relative;
+}
+
+.hj_section-title h2::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background: #444444;
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
+}
+.hj_section-title h2{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.hj_section-title h2::after{
+        content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #47b2e4;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.hj_section-title p{
+    margin-bottom: 0;
+}
+
+.hj_grid{
+    display: grid;
+    margin-top: 24px;
+    margin-right: 24px;
+    margin-left: 24px;
+}
+
+.hj_item-container{
+    flex-shrink: 0;
+    width: 100%;
+    /* max-width: 100%; */
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-top: 24px;
+}
+
+/* container 대상 반응형 */
+@media (min-width: 576px) {
+    .hj_container{
+        max-width: 540px;
+    }    
+}
+
+@media (min-width: 768px) {
+    .hj_container{
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px){
+    .hj_container{
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hj_container{
+        max-width: 1140px;
+    }
+}
