@@ -102,6 +102,10 @@ input[name="sy_filter"]:not(#sy_all):checked ~ .sy_portfolioGrid .sy_Column {
     background: #47b2e4; color: white;
 }
 
+.sy_portfolioButton label:hover {
+    background: #47b2e4; color: white;
+}
+
 
 
 
@@ -142,7 +146,6 @@ input[name="sy_filter"]:not(#sy_all):checked ~ .sy_portfolioGrid .sy_Column {
     width: 23px;
     height: 23px;
     opacity: 0.5;
-    transition: 0.3s;
 }
 .sy_imgHoverBoxRight a:hover img {
     opacity: 1;
