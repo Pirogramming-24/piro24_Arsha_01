@@ -1,0 +1,69 @@
+/*  커밋할 때 주석처리하기 
+    공통 색상
+*/
+
+
+
+
+.hj_services .hj_grid{
+    grid-template-columns: repeat(1, 1fr);
+}
+
+
+.hj_services .hj_service-item{
+    background-color: #fff;
+    box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+    padding: 50px 30px;
+    transition: all ease-in-out 0.4s;
+    height: 100%;
+    position: relative;
+}
+
+.hj_service-item .hj_icon svg{
+    color: #47b2e4;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 10px;
+}
+
+.hj_service-item h4{
+    margin-bottom: 15px;
+}
+
+.hj_service-item h4 a{
+    color: #37517e;
+    transition: ease-in-out 0.3s;
+    font-weight: 700;
+    font-size: 20px;
+    
+}
+.hj_service .hj_link{
+    inset: 0;
+}
+
+.hj_service .hj_link::after{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    content: '';
+}
+
+.hj_service-item:hover{
+    transform: translateY(-10px);
+}
+
+.hj_service-item:hover h4 a{
+    color: #47b2e4;
+}
+
+@media (min-width: 768px) {
+    .hj_services .hj_grid { 
+        grid-template-columns: repeat(2,1fr); 
+    }
+}
+
+@media (min-width: 1200px) {
+    .hj_services .hj_grid { 
+        grid-template-columns: repeat(4,1fr); 
+    }
+}
