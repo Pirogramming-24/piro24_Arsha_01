@@ -1,0 +1,97 @@
+.hj_pricing sup {
+    top: -4px;
+    left: 16px;
+}
+.hj_pricing sub, sup{
+    position: relative;
+    font-size: 36px;
+    line-height: 0;
+    vertical-align: ba;
+}
+
+.hj_pricing .hj_grid{
+    grid-template-columns: repeat(1,1fr);
+    /* justify-content: space-; */
+}
+.hj_pricing .hj_pricing-item{
+    background-color: #fff;
+    box-shadow: 0 3px 20px -2px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #f5f6f8;
+    padding: 60px 40px;
+    height: 100%;
+    border-radius: 5px;
+}
+.hj_pricing h3{
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.hj_pricing h4{
+    color: #47b2e4;
+    font-size: 48px;
+    font-weight: 400;
+    /* font-family: 'Jost', sans-serif; */
+    margin-bottom: 0;
+}
+.hj_pricing h4 sup{
+    font-size: 28px;
+}
+.hj_pricing h4 span{
+    color: #44444480;
+    font-size: 18px;
+}
+.hj_pricing ul{
+    padding: 20px 0;
+    list-style: none;
+    color: #444444b3;
+    text-align: left;
+    line-height: 20px;
+}
+.hj_pricing ul li{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+.hj_pricing ul li span{
+    font-size: 16px;
+}
+.hj_pricing ul svg{
+    color: #059652;
+    width: 24px;
+    height: 24px;
+    padding-right: 3px;
+}
+
+.hj_pricing ul .na{
+    color: #44444466;
+}
+.hj_pricing ul .na svg{
+    color: #44444466;
+}
+.hj_pricing ul .na span{
+    text-decoration: line-through;
+}
+.hj_pricing .hj_buy-btn{
+    color: #47b2e4;
+    display: inline-block;
+    padding: 8px 35px 10px 35px;
+    border-radius: 50px;
+    transition: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    border: 1px solid #47b2e4;
+}
+.hj_pricing .hj_buy-btn:hover{
+    background: #47b2e4;
+    color: #fff;
+}
+.hj_pricing .featured {
+    border-top-color: #47b2e4;
+}
+
+@media (min-width : 992px){
+    .hj_pricing .hj_grid{
+        grid-template-columns: repeat(3, minmax(280px, 1fr));
+    }
+}

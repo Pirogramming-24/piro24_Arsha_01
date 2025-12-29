@@ -70,7 +70,8 @@
 }
 .hj_work-progress .hj_steps-content .hj_feature-item svg{
     color: #47b2e4;
-    font-size: 18px;
+    width: 18px;
+    height: 18px;
     margin-right: 10px;
 }
 .hj_work-progress .hj_steps-feature .hj_feature-item span{
