@@ -4,7 +4,7 @@
 }
 
 /* 헤더 */
-.sy_header {text-align: center; margin-bottom: 50px;}
+.sy_header {text-align: center; margin-top: 50px; margin-bottom: 50px;}
 .sy_header h1 {
     font-size: 32px; font-weight: 700;
     color: #37517e;
@@ -181,9 +181,10 @@ input[name="sy_filter"]:not(#sy_all):checked ~ .sy_portfolioGrid .sy_Column {
     padding: 25px;
     border-radius: 5px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.10);
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
-.sy_teamCard:hover {transform: translateY(-8px);}
+
+.sy_teamCard:hover {translate: 0 -8px;}
 .sy_teamImg {
     width: 150px; height: 150px;
     border-radius: 50%;
@@ -242,7 +243,7 @@ input[name="sy_filter"]:not(#sy_all):checked ~ .sy_portfolioGrid .sy_Column {
 
   [data-sy_aos]{
     animation-timeline: view();
-    animation-range: entry 75% cover 90%;
+    animation-range: entry 30% cover 50%;
     will-change: opacity, transform;
   }
 
@@ -250,18 +251,18 @@ input[name="sy_filter"]:not(#sy_all):checked ~ .sy_portfolioGrid .sy_Column {
   [data-sy_aos="sy_fadeUp"]{
     opacity: 0;
     transform: translateY(120px);
-    animation: sy_fadeUp 1s cubic-bezier(.2,.8,.2,1) both;
+    animation: sy_fadeUp .3s cubic-bezier(.2,.8,.2,1) both;
     animation-timeline: view();
-    animation-range: entry 75% cover 90%;
+    animation-range: entry 30% cover 50%;
   }
 
   [data-sy_aos="sy_fadeUpLate"]{
     opacity: 0;
     transform: translateY(120px);
-    animation: sy_fadeUp 1s cubic-bezier(.2,.8,.2,1) both;
+    animation: sy_fadeUp .3s cubic-bezier(.2,.8,.2,1) both;
     animation-timeline: view();
-    animation-range: entry 80% cover 95%;
-    animation-delay: .15s;
+    animation-range: entry 35% cover 50%;
+    animation-delay: 0.15s;
   }
 
 
