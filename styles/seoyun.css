@@ -38,6 +38,7 @@ input[name="sy_filter"] { display: none; }
     gap: 25px;
     align-items: start;
     grid-auto-flow: row dense;
+    padding-left: 20px; padding-right: 20px;
 }
 
 .sy_Column {
@@ -161,32 +162,8 @@ input[name="sy_filter"]:not(#sy_all):checked ~ .sy_portfolioGrid .sy_Column {
 
 @keyframes sy_nudge_all  { 0%{transform: scale(0);opacity:0} 50%{transform: scale(0.82);opacity:.82} 100%{transform: scale(1);opacity:1} }
 @keyframes sy_nudge_app  { 0%{transform: scale(0);opacity:0} 50%{transform: scale(0.82);opacity:.82} 100%{transform: scale(1);opacity:1} }
-@keyframes sy_nudge_card { 0%{transform: scale(0);opacity:0} 50%{transform: scale(0.82);opacity:.82} 100%{transform: scale(1);opacity:1}  }
-@keyframes sy_nudge_web  { 0%{transform: scale(0);opacity:0} 50%{transform: scale(0.82);opacity:.82} 100%{transform: scale(1);opacity:1}  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@keyframes sy_nudge_card { 0%{transform: scale(0);opacity:0} 50%{transform: scale(0.82);opacity:.82} 100%{transform: scale(1);opacity:1} }
+@keyframes sy_nudge_web  { 0%{transform: scale(0);opacity:0} 50%{transform: scale(0.82);opacity:.82} 100%{transform: scale(1);opacity:1} }
 
 
 
@@ -250,4 +227,113 @@ input[name="sy_filter"]:not(#sy_all):checked ~ .sy_portfolioGrid .sy_Column {
 .sy_snsLink:hover {background: #47b2e4;}
 .sy_snsLink:hover img {filter: brightness(0) invert(1); opacity: 1;}
 
+
+
+
+
+
+[data-sy_aos]{
+  opacity: 1;
+  transform: none;
+}
+
+@supports (animation-timeline: view()) {
+
+
+  [data-sy_aos]{
+    animation-timeline: view();
+    animation-range: entry 75% cover 90%;
+    will-change: opacity, transform;
+  }
+
+
+  [data-sy_aos="sy_fadeUp"]{
+    opacity: 0;
+    transform: translateY(120px);
+    animation: sy_fadeUp 1s cubic-bezier(.2,.8,.2,1) both;
+    animation-timeline: view();
+    animation-range: entry 75% cover 90%;
+  }
+
+  [data-sy_aos="sy_fadeUpLate"]{
+    opacity: 0;
+    transform: translateY(120px);
+    animation: sy_fadeUp 1s cubic-bezier(.2,.8,.2,1) both;
+    animation-timeline: view();
+    animation-range: entry 80% cover 95%;
+    animation-delay: .15s;
+  }
+
+
+
+  @keyframes sy_fadeUp { to { opacity: 1; transform: translateY(0); } }
+  
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-sy_aos]{
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+
+    .sy_teamGrid {
+        display: grid; grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .sy_portfolioGrid{
+    display: block !important; 
+    column-count: 2;              
+    column-gap: 15px;
+  }
+
+  .sy_portfolioItem{
+    break-inside: avoid;
+    margin-bottom: 15px;
+  }
+
+  .sy_Column{
+    display: contents;
+  }
+
+  .sy_portfolioItem img{
+    width: 100%;
+    display: block;
+  }
+    .sy_teamCard {height: 210px;}
+    .sy_header p { font-size: 15px;}
+    
+
+
+    .sy_portfolioButton label {
+        padding: 10px 20px;
+        font-size: 15px;}
+    .sy_portfolioButton { margin-bottom: 25px; }
+
+}
+
+@media (max-width: 576px) {
+    .sy_portfolioGrid {column-count:1 ;}
+    .sy_header p {margin: 0 auto; text-align: center;}
+}
 
