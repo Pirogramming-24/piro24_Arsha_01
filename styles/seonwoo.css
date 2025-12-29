@@ -942,3 +942,7 @@ body {
     background:  rgb(71, 178, 228, 0.8);
     color: #fff;
 }
+
+.sw-container h2{
+    color: #fff !important;
+}
