@@ -158,19 +158,16 @@ body {
 }
 
 .yuri_faq_image_inner {
-  
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .yuri_faq_image {
   max-height: 80%;
   max-width: 100%;
   object-fit: contain;
 }
-
 
 .yuri_acc_item {
   background: #fff;
@@ -196,20 +193,6 @@ body {
 }
 
 .yuri_acc_item[open] .yuri_acc_header {
-  color: #47b2e4;
-}
-
-.yuri_acc_header::after {
-  content: '>';
-  position: absolute;
-  right: 0;
-  font-size: 12px;
-  transform: rotate(0deg);
-  transition: transform 0.3s, color 0.3s;
-}
-
-.yuri_acc_item[open] .yuri_acc_header::after {
-  transform: rotate(90deg);
   color: #47b2e4;
 }
 
@@ -278,9 +261,9 @@ body {
 .yuri_progress {
   height: 100%;
   background-color: #4668a2;
+  border-radius: 5px;
   width: 0;
 }
-
 
 @media (max-width: 991px) {
   .yuri_pc_br { 
@@ -320,23 +303,7 @@ body {
   }
 }
 
-@supports (animation-timeline: view()) {
-
-  .yuri_progress {
-    animation: fillBar 1.5s ease-out forwards;
-    animation-timeline: view();
-    animation-range: entry 20% cover 40%;
-  }
-
-}
-
-@keyframes fillBar {
-  from { width: 0; }
-  to { width: var(--w); }
-}
-
-
-
+/* 스크롤 애니메이션 기본 설정 */
 [data-yuri_aos]{
   opacity: 1;
   transform: none;
@@ -344,13 +311,11 @@ body {
 
 @supports (animation-timeline: view()) {
 
-
   [data-yuri_aos]{
     animation-timeline: view();
     animation-range: entry 75% cover 90%;
     will-change: opacity, transform;
   }
-
 
   [data-yuri_aos="yuri_fadeUp"]{
     opacity: 0;
@@ -369,7 +334,33 @@ body {
     animation-delay: .15s;
   }
 
-  @keyframes yuri_fadeUp { to { opacity: 1; transform: translateY(0); } }
+  @keyframes yuri_fadeUp { 
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    } 
+  }
+
+  /* 그래프 차오르는 애니메이션 */
+  [data-yuri_aos="yuri_progressBar"] {
+    width: 0;
+  }
+
+  .yuri_skills_section:has([data-yuri_aos="yuri_progressBar"]) {
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
+  
+  .yuri_skills_section[data-yuri_aos="yuri_fadeUp"] [data-yuri_aos="yuri_progressBar"] {
+    animation: fillBar 1.5s cubic-bezier(.2,.8,.2,1) both;
+    animation-timeline: view(block nearest);
+    animation-range: entry 20% cover 60%;
+  }
+
+  @keyframes fillBar {
+    from { width: 0; }
+    to { width: var(--w); }
+  }
   
 }
 
@@ -381,9 +372,87 @@ body {
   }
 }
 
+/* FAQ 섹션 애니메이션 제외 */
 .yuri_faq_section [data-yuri_aos],
 .yuri_faq_section .reveal {
   opacity: 1 !important;
   transform: none !important;
   animation: none !important;
+}
+
+/* FAQ 아코디언 스타일 */
+.yr_faq-item {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 25px;
+  border-radius: 4px;
+}
+
+.yr_faq-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.yr_faq-summary h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.yr_faq-check {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.yr_faq-2 .yr_faq-check:not(:checked) + .yr_faq-summary {
+  color: #222;
+}
+
+.yr_faq-2 .yr_faq-check:not(:checked) + .yr_faq-summary h3 {
+  color: #222;
+}
+
+.yr_faq-2 .yr_faq-check:not(:checked) + .yr_faq-summary .yr_faq-toggle {
+  color: #222;
+}
+
+.yr_faq-2 .yr_faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.35s cubic-bezier(.2,.8,.2,1),
+    opacity 0.25s ease;
+}
+
+.yr_faq-2 .yr_faq-inner {
+  overflow: hidden;
+}
+
+.yr_faq-2 .yr_faq-check:checked ~ .yr_faq-content {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.yr_faq-2 .yr_faq-check:checked + .yr_faq-summary {
+  color: #47b2e4;
+}
+
+.yr_faq-2 .yr_faq-check:checked + .yr_faq-summary h3 {
+  color: #47b2e4;
+}
+
+.yr_faq-2 .yr_faq-check:checked + .yr_faq-summary .yr_faq-toggle {
+  color: #47b2e4;
+  transform: rotate(90deg);
+}
+
+.yr_faq-toggle {
+  transition: color 0.3s ease, transform 0.3s ease;
 }

@@ -141,42 +141,85 @@
 
     <section class="yuri_faq_section">
     <div class="yuri_container_wide yuri_faq_flex">
+
         <div class="yuri_faq_content">
-        <div data-yuri_aos="yuri_fadeUp">
-        <h3 class="yuri_faq_title">
+        <h3 class="yuri_faq_title" data-yuri_aos="yuri_fadeUp">
             Eum ipsam laborum deleniti 
             <strong>velit pariatur architecto aut</strong> <br class="yuri_pc_br">
             <strong>nihil</strong>
         </h3>
-        <p class="yuri_faq_subtext">
+
+        <p class="yuri_faq_subtext" data-yuri_aos="yuri_fadeUp">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br class="yuri_pc_br">
             incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
         </p>
-        </div>
-        <div class="yuri_accordion" data-yuri_aos="yuri_fadeUpLate">
-            <details class="yuri_acc_item">
-            <summary class="yuri_acc_header"><span>01</span> Non consectetur a erat nam at lectus urna duis? <i class="yuri_acc_icon"></i></summary>
-            <div class="yuri_acc_body">
-                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+
+        <!-- Accordion -->
+        <div class="yuri_accordion yr_faq-2" data-yuri_aos="yuri_fadeUpLate">
+
+            <!-- FAQ 01 -->
+            <div class="yr_faq-item">
+            <input class="yr_faq-check" type="checkbox" id="faq1" checked>
+            <label class="yr_faq-summary yuri_acc_header" for="faq1">
+                <span>01</span>
+                <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                <span class="yr_faq-toggle">›</span>
+            </label>
+
+            <div class="yr_faq-content">
+                <div class="yr_faq-inner">
+                <div class="yuri_acc_body">
+                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                </div>
+                </div>
             </div>
-            </details>
-            <details class="yuri_acc_item">
-            <summary class="yuri_acc_header"><span>02</span> Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="yuri_acc_icon"></i></summary>
-            <div class="yuri_acc_body">
-                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
             </div>
-            </details>
-            <details class="yuri_acc_item">
-            <summary class="yuri_acc_header"><span>03</span> Dolor sit amet consectetur adipiscing elit pellentesque? <i class="yuri_acc_icon"></i></summary>
-            <div class="yuri_acc_body">
-                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+
+            <!-- FAQ 02 -->
+            <div class="yr_faq-item">
+            <input class="yr_faq-check" type="checkbox" id="faq2">
+
+            <label class="yr_faq-summary yuri_acc_header" for="faq2">
+                <span>02</span>
+                <h3>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h3>
+                <span class="yr_faq-toggle">›</span>
+            </label>
+
+            <div class="yr_faq-content">
+                <div class="yr_faq-inner">
+                <div class="yuri_acc_body">
+                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                </div>
+                </div>
             </div>
-            </details>
+            </div>
+
+            <!-- FAQ 03 -->
+            <div class="yr_faq-item">
+            <input class="yr_faq-check" type="checkbox" id="faq3">
+
+            <label class="yr_faq-summary yuri_acc_header" for="faq3">
+                <span>03</span>
+                <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                <span class="yr_faq-toggle">›</span>
+            </label>
+
+            <div class="yr_faq-content">
+                <div class="yr_faq-inner">
+                <div class="yuri_acc_body">
+                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis.
+                </div>
+                </div>
+            </div>
+            </div>
+
         </div>
         </div>
+
         <div class="yuri_faq_image_wrap" data-yuri_aos="yuri_fadeUp">
         <img src="images/yuri_Eum_img.png" alt="FAQ Image" class="yuri_faq_image">
         </div>
+
     </div>
     </section>
 
@@ -193,32 +236,32 @@
             <div class="yuri_skill_item">
             <span class="yuri_skill_name">HTML <i class="yuri_val">100%</i></span>
             <div class="yuri_progress_bar">
-                <div class="yuri_progress" style="--w: 100%;"></div>
+                <div class="yuri_progress" data-yuri_aos="yuri_progressBar" style="--w: 100%;"></div>
             </div>
             </div>
             <div class="yuri_skill_item">
             <span class="yuri_skill_name">CSS <i class="yuri_val">90%</i></span>
             <div class="yuri_progress_bar">
-                <div class="yuri_progress" style="--w: 90%;"></div>
+                <div class="yuri_progress" data-yuri_aos="yuri_progressBar" style="--w: 90%;"></div>
             </div>
             </div>
             <div class="yuri_skill_item">
             <span class="yuri_skill_name">JAVASCRIPT <i class="yuri_val">75%</i></span>
             <div class="yuri_progress_bar">
-                <div class="yuri_progress" style="--w: 75%;"></div>
+                <div class="yuri_progress" data-yuri_aos="yuri_progressBar" style="--w: 75%;"></div>
             </div>
             </div>
             <div class="yuri_skill_item">
             <span class="yuri_skill_name">PHOTOSHOP <i class="yuri_val">55%</i></span>
             <div class="yuri_progress_bar">
-                <div class="yuri_progress" style="--w: 55%;"></div>
+                <div class="yuri_progress" data-yuri_aos="yuri_progressBar" style="--w: 55%;"></div>
             </div>
             </div>
         </div>
         </div>
     </div>
     </section>
-
+    
     <!-- hyungju Services, Work Process, Call To Action -->
     <section id="services" class="hj_services hj_section">
         <!-- section title -->
