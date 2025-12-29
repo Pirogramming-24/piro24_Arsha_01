@@ -279,8 +279,8 @@ body {
   height: 100%;
   background-color: #4668a2;
   width: 0;
-  transition: width 1.5s ease-in-out;
 }
+
 
 @media (max-width: 991px) {
   .yuri_pc_br { 
@@ -329,6 +329,12 @@ body {
   }
 
 }
+
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: var(--w); }
+}
+
 
 
 [data-yuri_aos]{
