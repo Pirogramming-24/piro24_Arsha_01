@@ -1,3 +1,7 @@
+.hj_work-progress.hj_section{
+    background-color: #ffffff;
+}
+
 .hj_work-progress .hj_grid{
     grid-template-columns: repeat(1,1fr);
 }
