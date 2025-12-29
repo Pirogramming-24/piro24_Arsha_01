@@ -14,28 +14,24 @@
   }
 }
 
-/* 글자 올라오는 애니메이션 부분*/
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.reveal {
+.yuri_acc_body {
+  max-height: 0;
+  overflow: hidden;
   opacity: 0;
-  animation: fadeUp 0.8s ease forwards;
+
+  padding-top: 0;
+
+  transition:
+    max-height 0.6s cubic-bezier(.2,.8,.2,1),
+    opacity 0.35s ease,
+    padding-top 0.35s ease;
 }
 
-/*전체 섹션 순서랑 딜레이 시간 정해야함(저녁 회의 때 받기)*/
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.6s; }
-.delay-4 { animation-delay: 0.8s; }
-.delay-5 { animation-delay: 1s; }
-.delay-6 { animation-delay: 1.2s; }
+.yuri_acc_item[open] .yuri_acc_body {
+  
+  opacity: 1;
+  padding-top: 20px;
+}
+
+
 
