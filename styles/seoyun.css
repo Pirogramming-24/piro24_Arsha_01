@@ -280,61 +280,56 @@ input[name="sy_filter"]:not(#sy_all):checked ~ .sy_portfolioGrid .sy_Column {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 992px) {
-
     .sy_teamGrid {
-        display: grid; grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sy_portfolioGrid {
+        display: block !important;
+        column-count: 2;
+        column-gap: 15px;
+    }
+
+    .sy_portfolioItem {
+        break-inside: avoid;
+        margin-bottom: 15px;
+    }
+
+    .sy_Column {
+        display: contents;
+    }
+
+    .sy_portfolioItem img {
+        width: 100%;
+        display: block;
+    }
+
+    .sy_teamCard {
+        height: auto;
+        min-height: 230px;
     }
 }
 
-
-
 @media (max-width: 768px) {
-    .sy_portfolioGrid{
-    display: block !important; 
-    column-count: 2;              
-    column-gap: 15px;
-  }
+    .sy_portfolioGrid {
+        column-count: 1;
+    }
 
-  .sy_portfolioItem{
-    break-inside: avoid;
-    margin-bottom: 15px;
-  }
+    .sy_header p {
+        font-size: 15px;
+    }
 
-  .sy_Column{
-    display: contents;
-  }
-
-  .sy_portfolioItem img{
-    width: 100%;
-    display: block;
-  }
-    .sy_teamCard {height: 210px;}
-    .sy_header p { font-size: 15px;}
-    
-
+    .sy_teamCard {
+        min-height: 210px;
+    }
 
     .sy_portfolioButton label {
         padding: 10px 20px;
-        font-size: 15px;}
-    .sy_portfolioButton { margin-bottom: 25px; }
+        font-size: 15px;
+    }
 
+    .sy_portfolioButton {
+        margin-bottom: 25px;
+    }
 }
-
-@media (max-width: 576px) {
-    .sy_portfolioGrid {column-count:1 ;}
-    .sy_header p {margin: 0 auto; text-align: center;}
-}
-
