@@ -85,7 +85,7 @@ html, body{margin:0; padding:0;}
 
 .sh-testi-title h2{
   margin: 0 0 15px;
-  font-size: 50px;
+  font-size: 33px;
   color: #37517e;
   font-weight: 700;
   letter-spacing: 1px;
@@ -148,7 +148,6 @@ html, body{margin:0; padding:0;}
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 10px solid #f3f5fa;
   display: block;
   margin: 0 auto 15px;
 }
@@ -185,34 +184,32 @@ html, body{margin:0; padding:0;}
   text-align: center;
 }
 
+
+/* 따옴표파트 */
+.sh-testi-m{
+  max-width: 900px;
+  margin: 20px auto 0;
+  font-size: 18px;
+  color: #555;
+  line-height: 2;
+  text-align: center;
+
+  padding: 0 20px;
+}
+
 .sh-testi-m .sh-quote-left,
 .sh-testi-m .sh-quote-right{
-  display: none;
-}
-
-/* 큰 따옴표(가상요소) */
-.sh-testi-m::before,
-.sh-testi-m::after{
-  position: absolute;
-  font-size: 70px;
-  line-height: 1;
+  display: inline-block;
   color: #90bfd6;
-  font-style: normal;
+  font-size: 48px;      
+  line-height: 0;       
+  vertical-align: -0.25em; 
 }
 
-.sh-testi-m::before{
-  content: "“";
-  left: 0;
-  top: 0.15em;
-}
 
-.sh-testi-m::after{
-  content: "”";
-  right: 0;
-  bottom: -0.15em;       
-}
+.sh-testi-m .sh-quote-left{ margin-right: 6px; }
+.sh-testi-m .sh-quote-right{ margin-left: 6px; }
 
-/* 아래 점(모양만) */
 .sh-testi-dots{
   display: flex;
   justify-content: center;
@@ -326,11 +323,60 @@ html, body{margin:0; padding:0;}
   .sh-testi-m::after{ right: -2px; }
 }
 
+/* .sh-testimonials{ margin-top: 120vh; } */
+
+/* 애니메이션효과파트*/
+[data-sy_aos]{
+  opacity: 1;
+  transform: none;
+}
+
+@supports (animation-timeline: view()) {
+
+
+  [data-sy_aos]{
+    animation-timeline: view();
+    animation-range: entry 30% cover 50%;
+    will-change: opacity, transform;
+  }
+
+
+  [data-sy_aos="sy_fadeUp"]{
+    opacity: 0;
+    transform: translateY(120px);
+    animation: sy_fadeUp .3s cubic-bezier(.2,.8,.2,1) both;
+    animation-timeline: view();
+    animation-range: entry 30% cover 50%;
+  }
+
+  [data-sy_aos="sy_fadeUpLate"]{
+    opacity: 0;
+    transform: translateY(120px);
+    animation: sy_fadeUp .3s cubic-bezier(.2,.8,.2,1) both;
+    animation-timeline: view();
+    animation-range: entry 35% cover 50%;
+    animation-delay: 0.15s;
+  }
+
+
+
+  @keyframes sy_fadeUp { to { opacity: 1; transform: translateY(0); } }
+  
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-sy_aos]{
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* subscribe */
 
 /* #f8f8f8 */
 .sh-newsletter{
-  padding: 50px 0 ;
+  padding: 0px 0 ;
   width: 100%;
   max-width: none;
   overflow-x: hidden;
@@ -340,9 +386,9 @@ html, body{margin:0; padding:0;}
   background: #f8f8f8;
   max-width: 1200px;
   margin: 0 auto;
-  padding:  0 10%;
+  padding:  10px 10%;
   display: flex;
-  gap: 40px;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
 }
@@ -355,7 +401,7 @@ html, body{margin:0; padding:0;}
 .sh-newsletter h2{
   margin: 30px 0 12px;
   color: #37517e;
-  font-size: 44px;
+  font-size: 40px;
   font-weight: 700;
 
   white-space: nowrap;
@@ -410,16 +456,31 @@ html, body{margin:0; padding:0;}
   max-width: 520px;
   height: auto;
   display: block;
+
 }
 
+@media (max-width: 1199px){
+  .sh-newsletter-inner{
+    background: #f8f8f8;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding:  0 10%;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+}
 @media (max-width: 992px){
   .sh-newsletter-inner{
-    padding: 0 16px;
-
+    max-width: 800px;
     flex-direction: column;
     align-items: stretch;
     text-align: center;
     gap: 15px;
+    padding:  0 10%;
+
   }
 
   .sh-newsletter h2{
@@ -458,6 +519,10 @@ html, body{margin:0; padding:0;}
     padding: 50px 0;
   }
 
+  .sh-newsletter-inner{
+      padding:  0 10%;
+  }
+
   .sh-newsletter h2{
     padding: 30px 0 0 0;
     font-size: 35px;
@@ -485,6 +550,9 @@ html, body{margin:0; padding:0;}
 @media (max-width: 576px){
   .sh-newsletter{
     padding: 48px 0;
+  }
+  .sh-newsletter-inner{
+      padding:  0 10%;
   }
 
   .sh-newsletter h2{
