@@ -1,0 +1,55 @@
+.hj_faq-2 .hj_faq-container{
+    margin-top: 15px;
+}
+.hj_faq-2 .hj_faq-item{
+    background-color: #ffffff;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+} 
+.hj_faq-2 .hj_faq-item .hj_faq-icon {
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 0;
+    transition: 0.3s;
+    color: #47b2e4;
+}
+.hj_faq-2 .hj_faq-item h3{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 30px 0 32px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.hj_faq-2 .hj_faq-item .hj_faq-content{
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 0.3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.hj_faq-2 .hj_faq-item[open] .hj_faq-content{
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+.hj_faq-2 .hj_faq-item .hj_faq-content p{
+    margin-bottom: 0;
+    overflow: hidden;
+}
+.hj_faq-2 .hj_faq-item .hj_faq-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 16px;
+    height: 16px;
+    line-height: 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
