@@ -946,3 +946,7 @@ body {
 .sw-container h2{
     color: #fff !important;
 }
+
+.sw-section-title h2{
+    color: #37517E !important; 
+}
