@@ -304,25 +304,25 @@ body {
 }
 
 /* 스크롤 애니메이션 기본 설정 */
+/* 스크롤 애니메이션 기본 설정 */
 [data-yuri_aos]{
   opacity: 1;
   transform: none;
 }
 
-@supports (animation-timeline: view()) {
+.yuri_progress {
+  width: 0;
+}
 
-  [data-yuri_aos]{
-    animation-timeline: view();
-    animation-range: entry 75% cover 90%;
-    will-change: opacity, transform;
-  }
+
+@supports (animation-timeline: view()) {
 
   [data-yuri_aos="yuri_fadeUp"]{
     opacity: 0;
     transform: translateY(120px);
     animation: yuri_fadeUp 1s cubic-bezier(.2,.8,.2,1) both;
     animation-timeline: view();
-    animation-range: entry 75% cover 90%;
+    animation-range: entry 35% cover 50%;
   }
 
   [data-yuri_aos="yuri_fadeUpLate"]{
@@ -330,9 +330,25 @@ body {
     transform: translateY(120px);
     animation: yuri_fadeUp 1s cubic-bezier(.2,.8,.2,1) both;
     animation-timeline: view();
-    animation-range: entry 80% cover 95%;
+    animation-range: entry 40% cover 50%;
     animation-delay: .15s;
   }
+  .yuri_skills_section {
+    view-timeline-name: --skills;
+    view-timeline-axis: block;
+  }
+
+  .yuri_skills_section .yuri_progress {
+    width: 0;
+    animation: fillBar 1.5s cubic-bezier(.2,.8,.2,1) forwards;
+    animation-timeline: --skills; 
+    animation-range: entry 50% cover 70%;
+  }
+}
+
+.yuri_progress {
+  animation: fillBar 2s linear forwards;
+}
 
   @keyframes yuri_fadeUp { 
     to { 
@@ -342,43 +358,13 @@ body {
   }
 
   /* 그래프 차오르는 애니메이션 */
-  [data-yuri_aos="yuri_progressBar"] {
-    width: 0;
-  }
-
-  .yuri_skills_section:has([data-yuri_aos="yuri_progressBar"]) {
-    animation-timeline: view();
-    animation-range: entry 20% cover 40%;
-  }
-  
-  .yuri_skills_section[data-yuri_aos="yuri_fadeUp"] [data-yuri_aos="yuri_progressBar"] {
-    animation: fillBar 1.5s cubic-bezier(.2,.8,.2,1) both;
-    animation-timeline: view(block nearest);
-    animation-range: entry 20% cover 60%;
-  }
 
   @keyframes fillBar {
-    from { width: 0; }
-    to { width: var(--w); }
-  }
-  
+  from { width: 0; }
+  to { width: var(--w); }
 }
 
-@media (prefers-reduced-motion: reduce){
-  [data-yuri_aos]{
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
 
-/* FAQ 섹션 애니메이션 제외 */
-.yuri_faq_section [data-yuri_aos],
-.yuri_faq_section .reveal {
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
-}
 
 /* FAQ 아코디언 스타일 */
 .yr_faq-item {
