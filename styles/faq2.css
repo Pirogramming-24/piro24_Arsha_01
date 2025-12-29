@@ -62,22 +62,36 @@
     transition: 0.3s;
     cursor: pointer;
 }
+
 .hj_faq-2 .hj_faq-item[open] .hj_faq-toggle{
     transform: rotate(90deg);
     color: #47b2e4;
 }
 
 .hj_faq-2 .hj_faq-item .hj_faq-content{
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: 0.3s ease-in-out;
-    opacity: 0;
+    /* height: 0; */
+    transition: all 2s ease-in-out;
+    /* opacity: 0; */
     padding-top: 10px;
+    
+    outline: 2px solid red;
 }
 
 .hj_faq-2 .hj_faq-item[open] .hj_faq-content{
-    grid-template-rows: 1fr;
+    animation: expand 2s ease-in-out;
     opacity: 1;
+}
+
+@keyframes expand{
+    from{
+        max-height: 0;
+        opacity: 0;
+    }
+    to{
+        max-height: max-content;
+        opacity: 1;
+    }
+
 }
 
 .hj_faq-2 .hj_faq-item .hj_faq-content p{
