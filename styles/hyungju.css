@@ -62,24 +62,19 @@
     color: #fff;
 }
 
-/*  커밋할 때 주석처리하기 
-    공통 색상
-*/
+/* default.css */
 
-
-/* a, a:link, a:visited {
+.hj_section a, a:link, a:visited {
     text-decoration: none;
 } 
-*, ::after, ::before {
+.hj_section *, ::after, ::before {
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6{
+.hj_section h1, h2, h3, h4, h5, h6{
     color: #375171;
-} */
+}
 
-
-/* section, */
 .hj_section{
     color: #444444;
     background-color: #f5f6f8;
@@ -181,101 +176,107 @@ h1, h2, h3, h4, h5, h6{
     }
 }
 
+/* faq-2 */
 .hj_faq-2 .hj_faq-container{
     margin-top: 15px;
 }
+
+.hj_faq-2 .hj_item-container{
+    margin-top: 0;
+}
+
 .hj_faq-2 .hj_faq-item{
-    background-color: #ffffff;
-    position: relative;
-    padding: 20px;
-    margin-bottom: 20px;
-    overflow: hidden;
-} 
+  background-color: #ffffff;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.hj_faq-2 .hj_faq-check{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
 
 .hj_faq-2 .hj_faq-summary{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    list-style: none;
-    cursor: pointer;
-}
-.hj_faq-2 .hj_faq-summary::marker{
-    display: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
 }
 
-/* ? 아이콘 */
-.hj_faq-2 .hj_faq-item .hj_faq-icon {
-    position: absolute;
-    top: 22px;
-    left: 20px;
-    width: 20px;
-    height: 20px;
-    line-height: 0;
-    transition: 0.3s;
-    color: #47b2e4;
-
-    flex: 0 0 auto;
+.hj_faq-2 .hj_faq-icon{
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  line-height: 0;
+  transition: 0.3s;
+  color: #47b2e4;
+  flex: 0 0 auto;
 }
 
-/* 제목 */
 .hj_faq-2 .hj_faq-item h3{
-    flex: 1;
-    min-width: 0;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 24px;
-    margin: 0 30px 0 32px;
-    transition: 0.3s;
-    cursor: pointer;
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 30px 0 32px;
+  transition: 0.3s;
 }
-.hj_faq-2 .hj_faq-item[open] h3{
+.hj_faq-2 .hj_faq-item:hover h3{
     color: #47b2e4;
 }
 
-/* 꺾쇠 svg */
-.hj_faq-2 .hj_faq-item .hj_faq-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 16px;
-    height: 16px;
-    /* line-height: 0; */
-    color: #686868;
-    transition: 0.3s;
-    cursor: pointer;
+.hj_faq-2 .hj_faq-toggle{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 16px;
+  height: 16px;
+  color: #686868;
+  transition: 0.3s;
 }
 
-.hj_faq-2 .hj_faq-item[open] .hj_faq-toggle{
-    transform: rotate(90deg);
-    color: #47b2e4;
+/* 열림 상태 스타일 */
+.hj_faq-2 .hj_faq-check:checked + .hj_faq-summary h3{
+  color: #47b2e4;
+}
+.hj_faq-2 .hj_faq-check:checked + .hj_faq-summary .hj_faq-toggle{
+  transform: rotate(90deg);
+  color: #47b2e4;
 }
 
-.hj_faq-2 .hj_faq-item .hj_faq-content{
-    /* height: 0; */
-    transition: all 2s ease-in-out;
-    /* opacity: 0; */
-    padding-top: 10px;
-    
-    outline: 2px solid red;
+/* 내용 애니메이션: grid 0fr -> 1fr (닫힐 때도 부드럽게) */
+.hj_faq-2 .hj_faq-content{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease, opacity 0.25s ease;
+  opacity: 0;
+  padding-top: 10px;
 }
 
-.hj_faq-2 .hj_faq-item[open] .hj_faq-content{
-    animation: expand 2s ease-in-out;
-    opacity: 1;
+.hj_faq-2 .hj_faq-inner{
+  overflow: hidden;
 }
 
-@keyframes expand{
-    from{
-        max-height: 0;
-        opacity: 0;
-    }
-    to{
-        max-height: max-content;
-        opacity: 1;
-    }
-
+.hj_faq-2 .hj_faq-check:checked ~ .hj_faq-content{
+  grid-template-rows: 1fr;
+  opacity: 1;
 }
+
+.hj_faq-2 .hj_faq-content p{
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
 
 .hj_faq-2 .hj_faq-item .hj_faq-content p{
     margin-bottom: 0;
@@ -283,6 +284,8 @@ h1, h2, h3, h4, h5, h6{
     font-size: 16px;
     line-height: 24px;
 }
+
+/* pricing */
 
 .hj_pricing sup {
     top: -4px;
@@ -421,7 +424,7 @@ h1, h2, h3, h4, h5, h6{
     text-transform: uppercase;
     font-size: 13px;
     padding: 6px 12px;
-    font-weight: 500;
+    font-weight: 400;
 }
 .hj_recent-blog-posts .hj_post-item .hj_post-content{
     padding: 30px;
@@ -575,6 +578,11 @@ h1, h2, h3, h4, h5, h6{
     .hj_services .hj_grid { 
         grid-template-columns: repeat(4,1fr); 
     }
+}
+
+
+.hj_work-progress.hj_section{
+    background-color: #ffffff;
 }
 
 .hj_work-progress .hj_grid{
