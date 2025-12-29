@@ -104,7 +104,7 @@ body {
 }
 
 .sw-btn-download {
-    background: #47b2e4;
+    background: #00a6eb;
     color: #fff;
     height: 100%;
     padding: 0 16px;
@@ -117,7 +117,7 @@ body {
 }
 
 .sw-btn-download:hover {
-    background: #00a6eb;
+    background: #47b2e4;
 }
 
 /* Header */
@@ -128,8 +128,8 @@ body {
     left: 0;
     z-index: 9999;
     background: #37517e;
-    padding: 30px 0;
     transition: all 0.5s;
+    padding: 30px 0;
     animation: change-header-color both;
     animation-timeline: scroll();
     animation-range: 0px 200px;
@@ -255,13 +255,14 @@ body {
     align-items: center;
     color: #fff;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px !important; 
     transition: color 0.3s;
 }
 
 .sw-btn-watch i {
     font-size: 24px;
     margin-right: 8px;
+    transition: color 0.3s;
 }
 
 .sw-btn-watch:hover,
@@ -373,6 +374,8 @@ body {
     box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
 }
 
+
+
 .sw-info-box {
     margin-bottom: 20px;
     display: flex;
@@ -380,20 +383,25 @@ body {
 }
 
 .sw-info-box i {
-    font-size: 32px;
+    font-size: 20px;
     color: #47b2e4;
     background: #e7f5fb;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 15px;
+    transition: all 0.3s ease;
+}
+.sw-info-box i:hover {
+    background: #47b2e4;
+    color: #ffffff;     
 }
 
 .sw-info-box h3 {
-    font-size: 20px;
+    font-size: 18px;
     color: #37517e;
     font-weight: 700;
     margin-bottom: 5px;
@@ -455,13 +463,13 @@ body {
 }
 
 .sw-text-center button:hover {
-    background: #209dd8;
+    background: rgb(71, 178, 228, 0.8)
 }
 
 /* Newsletter */
 .sw-footer-newsletter {
     padding: 50px 0;
-    background: #f3f5fa;
+    background: #f5f6f8;
     text-align: center;
     font-size: 15px;
     color: #444;
@@ -507,7 +515,7 @@ body {
 }
 
 .sw-newsletter-form input[type=submit]:hover {
-    background: #209dd8;
+   background: rgb(71, 178, 228, 0.8)
 }
 
 /* Footer */
@@ -583,13 +591,13 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    color: #444;
+    color: #6c6c6c;
     transition: all 0.3s;
 }
 
 .sw-social-links a:hover {
-    background: #209dd8;
-    color: #fff;
+    background: #fff;
+    color: #209dd8;
     border-color: #209dd8;
 }
 
@@ -634,12 +642,29 @@ body {
 @keyframes change-header-color {
     to {
         background: rgba(40, 58, 90, 0.9);
-        backdrop-filter: blur(10px);
         box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-        padding: 15px 0;
+        padding: 25px 0;
     }
 }
+/* hero animate*/
+.sw-hero-animate {
+    opacity: 0; 
 
+    animation: sw-hero-zoomIn 2s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
+}
+
+@keyframes sw-hero-zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+        filter: blur(10px);    
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);   
+        filter: blur(0);      
+    }
+}
 /* Scroll Animations */
 [data-sw-aos] {
     opacity: 1;
@@ -766,4 +791,154 @@ body {
     .sw-clients-track {
         width: calc(100% / 2 * 16);
     }
+}
+
+/* 수정 */
+.sw-copyright strong span {
+    font-weight: bold !important;
+}
+
+.sw-footer-row strong{
+     font-weight: bold !important;
+
+}
+
+.sw-footer-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: 80px 30px;
+}
+
+/*드랍다운*/
+.sw-nav > ul {
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+.sw-nav-list > li {
+    position: relative;
+}
+
+.sw-nav-list a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.sw-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 200px;
+    padding: 5px 0;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 9999;
+    display: block;
+    flex-direction: column;
+}
+
+.sw-dropdown-menu li {
+    position: relative;
+}
+
+.sw-dropdown:hover > .sw-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+}
+
+.sw-dropdown-menu a {
+    padding: 5px 10px;
+    color: #565656;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.sw-dropdown-menu a:hover {
+    background: #f3f5fa;
+    color: #47b2e4;
+}
+
+/* Deep Dropdown */
+.sw-dropdown-deep-menu {
+    position: absolute;
+    top: 0;
+    right: 100%;          
+    margin-right: 0;      /* 10px를 0으로 변경 */
+    
+    background: #fff;
+    width: 200px;         
+    min-width: 200px;     
+    padding: 5px 0;
+    
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    
+    display: flex;        
+    flex-direction: column; 
+    gap: 0;               
+}
+
+.sw-dropdown-deep:hover > .sw-dropdown-deep-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-right: 0;      /* 이미 0이므로 그대로 유지 */
+}
+
+
+.sw-dropdown-deep-menu li {
+    width: 100%;
+    display: block;
+}
+
+.sw-dropdown-menu,
+.sw-dropdown-deep-menu {
+    width: 200px;     
+    min-width: 200px;  
+    padding: 5px 0;    
+}
+
+/* 위로 가기 버튼 스타일 */
+.sw-back-to-top {
+    position: fixed;
+    visibility: visible;
+    opacity: 1;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999; 
+    background: #47b2e4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    transition: all 0.4s;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.sw-back-to-top i {
+    font-size: 16px;
+    color: #fff;
+    line-height: 0;
+}
+
+.sw-back-to-top:hover {
+    background:  rgb(71, 178, 228, 0.8);
+    color: #fff;
 }

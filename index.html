@@ -17,7 +17,7 @@
 
 <body>
     <!-- seonwoo header -->
-     <div class="sw-preview-bar">
+       <div class="sw-preview-bar">
         <div class="sw-preview-container">
             <div class="sw-preview-left">
                 <a href="/" class="sw-preview-logo-box">
@@ -54,14 +54,35 @@
             <div class="sw-header-right">  
                 <nav class="sw-nav">
                     <ul class="sw-nav-list">
-                        <li><a href="#Home">Home</a></li>
-                        <li><a href="#About">About</a></li>
-                        <li><a href="#Services">Services</a></li>
-                        <li><a href="#Portfolio">Portfolio</a></li>
-                        <li><a href="#Team">Team</a></li>
-                        <li><a href="#Pricing">Pricing</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Pricing</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="#">Dropdown<i class="bi bi-chevron-down"></i></a></li>
+                        <li class="sw-dropdown">
+                            <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down"></i></a>
+                            
+                            <ul class="sw-dropdown-menu">
+                                <li><a href="#">Dropdown 1</a></li>
+                                
+                                <li class="sw-dropdown-deep">
+                                    <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down"></i></a>
+                                    
+                                    <ul class="sw-dropdown-deep-menu">
+                                        <li><a href="#">Deep Dropdown 1</a></li>
+                                        <li><a href="#">Deep Dropdown 2</a></li>
+                                        <li><a href="#">Deep Dropdown 3</a></li>
+                                        <li><a href="#">Deep Dropdown 4</a></li>
+                                        <li><a href="#">Deep Dropdown 5</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Dropdown 2</a></li>
+                                <li><a href="#">Dropdown 3</a></li>
+                                <li><a href="#">Dropdown 4</a></li>
+                            </ul>
+                        </li>                     
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
@@ -71,9 +92,8 @@
         </div>
     </header>
     <section class="sw-hero">
-        <div id="Home"></div><br><br>
         <div class="sw-container">
-            <div class="sw-hero-text">
+            <div class="sw-hero-text sw-hero-animate">
                 <h2>Better Solutions For Your Business</h2>
                 <p>We are team of talented designers making websites with Bootstrap</p>
                 <div class="sw-btn-group">
@@ -81,15 +101,11 @@
                     <a href="#" class="sw-btn-watch">
                         <i class="bi bi-play-circle"></i> Watch Video
                     </a>
-                        
                 </div>
-        </div>
-
-        <div class="sw-hero-img">
-            <img src="https://bootstrapmade.com/content/demo/Arsha/assets/img/hero-img.png" alt="Hero Image">
-        </div>
-    </div>
-    </section>
+            </div> <div class="sw-hero-img sw-hero-animate">
+                <img src="https://bootstrapmade.com/content/demo/Arsha/assets/img/hero-img.png" alt="Hero Image">
+            </div>
+        </div> </section>
     
     <section class="sw-clients">
         <div class="sw-container">
@@ -1293,7 +1309,7 @@
     </section>
 
     <!-- seonwoo footer -->
-   <section class="sw-contact" data-sw-aos="sw-fadeUp">
+     <section class="sw-contact" data-sw-aos="sw-fadeUp">
     <div class="sw-container">
         
         <div class="sw-section-title">
@@ -1313,7 +1329,7 @@
 
                 </div>
                    <div class="sw-info-box">
-                    <i class="bi bi-phone"></i>
+                    <i class="bi bi-telephone"></i>
                     <div>
                         <h3>Call Us</h3>
                         <p>+1 5589 55488 55s</p>
@@ -1446,6 +1462,9 @@
                 </div>
             </div>
         </div>
+           <a href="#" class="sw-back-to-top">
+                <i class="bi bi-arrow-up"></i>
+            </a>
     </footer>
 </body>
 </html>
