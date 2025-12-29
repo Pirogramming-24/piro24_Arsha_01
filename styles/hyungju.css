@@ -48,9 +48,9 @@
     font-size: 16px;
     letter-spacing: 1px;
     display: inline-block;
-    padding: 12px 40px;
+    padding: 16px 40px;
     border-radius: 50px;
-    transition: 0.5s;
+    transition: all 0.5s linear;
     margin: 10px;
     border: 2px solid #fff;
     color: #fff;
@@ -58,8 +58,31 @@
 }
 
 .hj_call-to-action .hj_cta-btn:hover{
+    border: 0px;
     background: #47b2e4;
     color: #fff;
+}
+
+@media (min-width: 1200px){
+    .hj_call-to-action .hj_cta-content{
+        text-align: left;
+    }
+    .hj_call-to-action .hj_grid{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        gap: 8px;
+    }
+    .hj_call-to-action .hj_grid .hj_cta-content {
+        flex: 0 0 75%;
+        min-width: 0;          /* 텍스트 overflow 있을 때 필수 */
+    }
+
+    .hj_call-to-action .hj_grid .hj_cta-btn {
+        flex: 0 0 25%;
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 /* default.css */
@@ -76,6 +99,11 @@
 
 .hj_section h1, h2, h3, h4, h5, h6{
     color: #375171;
+}
+
+.hj_section p{
+    line-height: 1.5;
+    font-size: 14px;
 }
 
 .hj_section{
@@ -96,7 +124,7 @@
 
 .hj_section-title{
     text-align: center;
-    padding-bottom: 60px;
+    padding-bottom: 50px;
     position: relative;
 }
 
@@ -105,8 +133,8 @@
     position: absolute;
     display: block;
     width: 160px;
-    height: 1px;
-    background: #444444;
+    height: 1.3px;
+    background: #ccc;
     left: 0;
     right: 0;
     bottom: 1px;
@@ -122,7 +150,7 @@
 }
 
 .hj_section-title h2::after{
-        content: "";
+    content: "";
     position: absolute;
     display: block;
     width: 60px;
@@ -140,7 +168,7 @@
 
 .hj_grid{
     display: grid;
-    margin-top: 24px;
+    /* margin-top: 24px; */
     margin-right: 24px;
     margin-left: 24px;
 }
@@ -703,4 +731,58 @@
     .hj_work-progress .hj_steps-content h3{
         font-size: 22px;
     }
+}
+
+[data-hj_aos]{
+    opacity: 1;
+    transform: none;
+}
+
+@supports (animation-timeline: view()){
+
+    [data-hj_aos]{
+        animation-timeline: view();
+        animation-range: entry 30% cover 60%;
+        will-change: opacity, transform;
+    }
+    [data-hj_aos="hj_zoomIn"]{
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: center center !important;
+        animation: hj_zoomIn .3s ease-out both;
+        animation-timeline: view();
+        animation-range: entry 30% cover 60%;
+        animation-delay: 0.1s;
+    }
+
+    [data-hj_aos="hj_fadeUp"]{
+        opacity: 0;
+        transform: translateY(120px);
+        /* cubic-bezier(.2,.8,.2,1) both */
+        animation: hj_zoomIn .3s ease-out both; 
+        animation-timeline: view();
+        animation-range: entry 20% cover 40%;
+        --hj-delay: 0s;
+        animation-delay: var(--hj-delay);
+    }
+    /* [data-delay="0s"]{ --hj-delay: 0s; } */
+    [data-delay="0.05s"]{ --hj-delay: 0.05s; }
+    [data-delay="0.1s"]{ --hj-delay: 0.1s; }
+    [data-delay="0.15s"]{ --hj-delay: 0.15s; }
+    [data-delay="0.2s"]{ --hj-delay: 0.2s; }
+
+    @keyframes hj_zoomIn {
+        to{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes hj_fadeUp {
+         to { 
+            opacity: 1; transform: translateY(0); 
+        } 
+    }
+ 
+
 }
