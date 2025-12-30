@@ -1,0 +1,119 @@
+.hj_work-progress.hj_section{
+    background-color: #ffffff;
+}
+
+.hj_work-progress .hj_grid{
+    grid-template-columns: repeat(1,1fr);
+}
+.hj_work-progress .hj_steps-item{
+    background: #fff;
+    border-radius: 20px;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 20px #44444414;
+}
+.hj_work-progress .hj_steps-item:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px #47b2e426;
+}
+.hj_work-progress .hj_steps-item:hover .hj_steps-img img{
+    transform: scale(1.1);
+}
+.hj_work-progress .hj_steps-item .hj_steps-img{
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+
+.hj_work-progress .hj_steps-img{
+    position: relative;
+    height: 280px;
+}
+.hj_work-progress .hj_steps-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+
+.hj_work-progress .hj_steps-content{
+    position: relative;
+    padding: 40px 30px 30px;
+}
+.hj_work-progress .hj_steps-content .hj_steps-num{
+    position: absolute;
+    left: 30px;
+    top: -30px;
+    width: 60px;
+    height: 60px;
+    background: #47b2e4;
+    color: #ffffff;
+    border-radius: 50%;
+    /* font-family */
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+.hj_work-progress .hj_steps-content h3{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.hj_work-progress .hj_steps-content p{
+    font-size: 15px;
+    color: #444444cc;
+    margin-bottom: 25px;
+}
+.hj_work-progress .hj_steps-feature .hj_feature-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.hj_work-progress .hj_steps-content .hj_feature-item svg{
+    color: #47b2e4;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+.hj_work-progress .hj_steps-feature .hj_feature-item span{
+    font-size: 14px;
+    color: #444444d9;
+}
+
+@media (min-width: 992px) {
+    .hj_work-progress .hj_grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 991px) {
+    .hj_work-progress .hj_steps-content{
+        padding: 30px 20px 20px;
+    }
+    .hj_work-progress .hj_steps-content .hj_steps-num{
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        left: 25px;
+        top: -25px;
+    }
+    .hj_work-progress .hj_steps-content p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .hj_work-progress .hj_steps-content h3{
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .hj_work-progress .hj_steps-content{
+        padding: 35px 25px 25px;
+    }
+    .hj_work-progress .hj_steps-content h3{
+        font-size: 22px;
+    }
+}
